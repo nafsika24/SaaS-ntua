@@ -1,4 +1,4 @@
-# SaaS
+# NTUA-SaaS
 # AskMeAnything
 
 This app is compatible with Unix and Unix-like operating systems.
