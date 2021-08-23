@@ -18,8 +18,8 @@ _This repository hosts the [Software as a Service (Saas)](https://shmmy.ntua.gr/
 ## :muscle: Team Members
 
 The members of the team who created this project are (alphabetical order):
- * [Nafsika Abatzi  ](https://github.com/nafsika24)    (AM: 03117198, nafsika.abatzi@gmail.com)
- * [Effrosyni Christodoulea   ](https://github.com/frosychr) (AM: 03117178, frosy.chri@gmail.com)
+ * [Nafsika Abatzi  ](https://github.com/nafsika24)    (nafsika.abatzi@gmail.com)
+ * [Effrosyni Christodoulea   ](https://github.com/frosychr) (frosy.chri@gmail.com)
 
 
 ## :gear: Software 
