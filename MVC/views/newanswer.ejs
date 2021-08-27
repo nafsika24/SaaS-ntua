@@ -1,0 +1,113 @@
+<%- include('includes/head.ejs') %>
+
+<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/questions.css">
+<link rel="stylesheet" href="/css/top-navbar.css">
+<link rel="stylesheet" href="/css/backround_new_quest_ans.css">
+<script>
+    function validateForm() {
+        var x = document.forms["myForm"]["answer"].value;
+        if (x == "") {
+            alert("Answers must be filled out");
+            return false;
+        }
+    }
+</script>
+
+</head>
+
+<body>
+
+<%- include('includes/navigation.ejs') %>
+
+<main>
+    <h class = "header" > Answer a Question!</h>
+
+    <form action="/newanswer" id="myForm" name="myForm" method = "post"  onsubmit="return validateForm()">
+
+        <label for="titles" style="font-family:'Courier New'">Choose a Question Title:</label>
+
+        <script>
+
+            function run() {
+                var x = document.getElementById("titles").value;
+                var getFromBetween = {
+                    results:[],
+                    string:"",
+                    getFromBetween:function (sub1,sub2) {
+                        if(this.string.indexOf(sub1) < 0 || this.string.indexOf(sub2) < 0) return false;
+                        var SP = this.string.indexOf(sub1)+sub1.length;
+                        var string1 = this.string.substr(0,SP);
+                        var string2 = this.string.substr(SP);
+                        var TP = string1.length + string2.indexOf(sub2);
+                        return this.string.substring(SP,TP);
+                    },
+                    removeFromBetween:function (sub1,sub2) {
+                        if(this.string.indexOf(sub1) < 0 || this.string.indexOf(sub2) < 0) return false;
+                        var removal = sub1+this.getFromBetween(sub1,sub2)+sub2;
+                        this.string = this.string.replace(removal,"");
+                    },
+                    getAllResults:function (sub1,sub2) {
+                        // first check to see if we do have both substrings
+                        if(this.string.indexOf(sub1) < 0 || this.string.indexOf(sub2) < 0) return;
+
+                        // find one result
+                        var result = this.getFromBetween(sub1,sub2);
+                        // push it to the results array
+                        this.results.push(result);
+                        // remove the most recently found one from the string
+                        this.removeFromBetween(sub1,sub2);
+
+                        // if there's more substrings
+                        if(this.string.indexOf(sub1) > -1 && this.string.indexOf(sub2) > -1) {
+                            this.getAllResults(sub1,sub2);
+                        }
+                        else return;
+                    },
+                    get:function (string,sub1,sub2) {
+                        this.results = [];
+                        this.string = string;
+                        this.getAllResults(sub1,sub2);
+                        return this.results;
+                    }
+                };
+                var result = getFromBetween.get(x,"text:",",");
+                var keywords = getFromBetween.get(x,"keywords: [ "," ]");
+                document.getElementById("srt").value = result;
+                document.getElementById("keywords").value = keywords;
+            }
+        </script>
+        <div class="custom-select" >
+
+        <select id="titles" name="titles"onchange="run()">  <!--Call run() function-->
+            <option value="0">Titles:</option>
+            <% if (quest.length > 0) { %>
+                <% for(let question of quest) { %>
+
+                    <option name = "title_select" id="title_select"
+                            value = "<%= question%>"
+                    >
+                        <%=question.title %></option>
+                <% }%>
+            <% }
+            else{ %>
+                <h2> No questions yet!</h2>
+            <% }%>
+        </select>
+        </div><br><br>
+        <label for="titles" style="font-family:'Courier New'">Keywords</label><br>
+        <input type="text" id="keywords" readonly><br>
+        <label for="titles" style="font-family:'Courier New'">Other Answers</label><br><br>
+        <input type="text" id="srt" readonly><br>
+
+        <div class="form-control">
+            <label for="answer" style="font-family:'Courier New'">Your Answer </label>
+            <input type="text" id="answer" name="answer">
+        </div>
+        <input type="hidden" name="_csrf" value="<%= csrfToken%>">
+        <button class="btn" type="submit">Submit</button>
+        <button class = "btn" type="cancel" onclick="window.location='/';return false;">Nevermind</button>
+    </form>
+
+</main>
+<%- include('includes/end.ejs') %>

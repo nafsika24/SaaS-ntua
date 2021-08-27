@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+main {
+  padding: 1rem;
+  margin: auto;
+}
+
+.main-header {
+  width: 100%;
+  height: 3.5rem;
+
+  background: #042844;
+  padding: 0 1.5rem;
+}
+
+.main-header__nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.main-header__item-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.main-header__item {
+  margin: 0 1rem;
+  padding: 0;
+}
+
+.main-header__item a {
+  text-decoration: none;
+  color: white;
+}
+
+.main-header__item a:hover,
+.main-header__item a:active,
+.main-header__item a.active {
+  color: black;
+}
+.main-header__item a.active1 {
+  float: right;
+  color: black;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.card__header,
+.card__content {
+  padding: 1rem;
+}
+
+.card__header h1,
+.card__content h1,
+.card__content h2,
+.card__content p {
+  margin: 0;
+}
+
+.card__image {
+  width: 100%;
+}
+
+.card__image img {
+  width: 100%;
+}
+
+.card__actions {
+    padding: 1rem;
+    text-align: center;
+}
+
+.card__actions button,
+.card__actions a {
+    margin: 0 0.25rem;
+}
+
+.btn {
+  font: inherit;
+  border: 1px solid #00695c;
+  color: #00695c;
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 23px;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #00695c;
+  color: white;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}
+h1 {text-align: center;}
+
+
+.button11 {
+  background: #042844;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+float: right;
+  width: 30%;
+  margin-bottom: 200px;
+  margin-right: 100px;
+
+}
+
+.column12 {
+  float: right;
+  width: 30%;
+  margin-bottom: 200px;
+  margin-right: 100px;
+
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  margin-bottom: 110px;
+}
+
+@media screen and (max-width: 650px) {
+
+  .button11 {
+    background: #042844;
+    border: none;
+    color: white;
+    padding: 0px 3px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 1px 2px;
+    cursor: pointer;
+  }
+
+  .main-header {
+    width: 100%;
+    height: 4.5rem;
+    background: #042844;
+    padding: 0 1.5rem;
+  }
+  .column {
+    text-align: center;
+    width: 33.33%;
+    margin-top: -5px;
+    margin-right: 50px;
+
+  }
+
+  .column12 {
+    text-align: center;
+    width: 33.33%;
+    margin-top: -85px;
+    margin-right: 50px;
+
+  }
+}

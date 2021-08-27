@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+.column_my {
+    float: left;
+    text-align: center;
+    width: 33.33%;
+    margin-bottom: 100px;
+}
+
+/* Clearfix (clear floats) */
+.row_my::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+@media screen and (max-width: 650px) {
+    /* Clearfix (clear floats) */
+    .row_my::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    .column_my {
+        float: left;
+        width: 45%;
+
+        column-gap: 400px;
+    }
+
+}

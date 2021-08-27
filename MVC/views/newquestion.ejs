@@ -1,0 +1,55 @@
+<%- include('includes/head.ejs') %>
+
+<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/backround_new_quest_ans.css">
+<link rel="stylesheet" href="/css/top-navbar.css">
+
+<script>
+    function validateForm() {
+        var x = document.forms["myForm"]["title"].value;
+        if (x == "") {
+            alert("All fields should be filled!");
+            return false;
+        }
+        var y = document.forms["myForm"]["subject"].value;
+        if (y == "") {
+            alert("All fields should be filled!");
+            return false;
+        }
+        var z = document.forms["myForm"]["keywords"].value;
+        if (z == "") {
+            alert("All fields should be filled!");
+            return false;
+        }
+
+    }
+</script>
+</head>
+
+<body>
+
+<%- include('includes/navigation.ejs') %>
+
+<main>
+    <h class="header">Ask a Question</h>
+    <form class ="form-control" name="myForm" action="/newquestion" method="post" onsubmit="return validateForm()">
+        <div class="form-control">
+            <label for="title"  style="font-family:'Courier New'">Title</label>
+            <input type="text" name="title" id="title" placeholder="Your Title..">
+        </div>
+        <div class="form-control">
+            <label for="subject" style="font-family:'Courier New'" > Your Question</label>
+            <input id="subject" name="subject" placeholder="Ask anything.."  >
+        </div>
+        <div>
+            <label for="keywords"  style="font-family:'Courier New'">Keywords</label>
+            <input type="text" name ="keywords" id="keywords"  placeholder="Write some Keywords (separeted by comma)..">
+        </div>
+        <input type="hidden" name="_csrf" value="<%= csrfToken%>">
+        <button class="btn" type="submit">Submit</button>
+        <button class = "btn" type="cancel" onclick="window.location='/';return false;">Cancel</button>
+    </form>
+
+
+</main>
+<%- include('includes/end.ejs') %>

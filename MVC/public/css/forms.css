@@ -1,0 +1,64 @@
+
+.form-control {
+    margin: 1rem 0;
+}
+
+.form-control label,
+.form-control input {
+    display: inline-block;
+    width: 60%;
+    margin-bottom: 0.5rem;
+
+}
+
+.form-control input {
+    border: 1px solid #042844;
+    font: inherit;
+    border-radius: 2px;
+    height: 60px;      /* increase the height */
+    text-align: center;
+}
+
+.form-control input:focus {
+    outline-color: #00695c;
+}
+
+.cancel {
+    font: inherit;
+    border: 1px solid #00695c;
+    color: #00695c;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+h2 {
+    text-align: center;
+}
+
+
+label { font-size: 20px;
+        font-weight:bold
+}
+
+h.header{
+    text-align: center;
+    background: #042844;
+    color: #fff;
+    line-height: 73px;
+    padding: 5px 5px;
+    font-size: 24px;
+    text-transform: uppercase;
+    white-space:pre-wrap;
+    border-radius: 5px; /* Rounded borders */
+}
+p.groove {
+    text-align: center;
+    color: black;
+    margin: 20px;
+    padding: 40px;
+    background: #b3e0ff;
+    line-height: 13px;
+    height: 21px;
+    font-size: 18px;
+}
+

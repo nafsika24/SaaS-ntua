@@ -1,0 +1,100 @@
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select,textarea {
+    width: 80%; /* Full width */
+    align-items: center;
+    padding: 12px; /* Some padding */
+    border: 1px solid #042844;
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical;
+    font-size: 15px;
+
+
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #00695c;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background: #042844;
+}
+
+a:link, a:visited {
+    background: #042844;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background: #042844;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+h2 {
+    text-align: center;
+}
+
+h.header{
+    background: #042844;
+    color: #fff;
+
+    line-height: 73px;
+    padding: 5px 5px;
+    font-size: 24px;
+    text-transform: uppercase;
+    white-space:pre-wrap;
+    border-radius: 5px; /* Rounded borders */
+
+}

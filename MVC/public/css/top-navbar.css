@@ -1,0 +1,132 @@
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+.topnav a:hover {
+
+    color: yellow;
+}
+
+.topnav a.active {
+    color: black;
+}
+
+.topnav-right {
+    float: right;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+/* Clearfix (clear floats) */
+.row::after {
+    text-align: center;
+    content: "";
+    clear: both;
+    display: table;
+    padding-bottom: 40px;
+}
+/* Clearfix (clear floats) */
+.row_my::after {
+    text-align: center;
+    content: "";
+    clear: both;
+    display: table;
+    padding-bottom: 35px;
+}
+
+/* Header/Logo Title */
+.header {
+    padding: 210px;
+    text-align: center;
+    background: url('https://media.istockphoto.com/illustrations/question-answer-bubble-icon-special-blue-banner-background-illustration-id1017160930?k=6&m=1017160930&s=612x612&w=0&h=EEAllFzyvaPBqqF60kpm43fecC1JRo6bPhfEvX_WHKM=') repeat-x;
+    color: white;
+    font-size: 25px;
+    background-size: cover;
+    width: -moz-fit-content;
+
+}
+.content {
+    position: center;
+    width: 100%;
+    text-align: center;
+
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
+.centerh3 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 650px) {
+    .topnav-right {
+        float: right;
+        padding: 4px 11px;
+        font-size: 15px;
+
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 4px 6px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    /* Header/Logo Title */
+    .header {
+        padding: 55px;
+        text-align: left;
+        background: url('https://media.istockphoto.com/illustrations/question-answer-bubble-icon-special-blue-banner-background-illustration-id1017160930?k=6&m=1017160930&s=612x612&w=0&h=EEAllFzyvaPBqqF60kpm43fecC1JRo6bPhfEvX_WHKM=') repeat-x;
+        color: white;
+        font-size: 10px;
+        background-size: cover;
+        width: -moz-fit-content;
+    }
+    h1 {font-size: 110%; height:20%; }
+
+
+    /* Clearfix (clear floats) */
+    .row::after {
+        text-align: center;
+        content: "";
+        clear: both;
+        display: table;
+        margin-bottom: 80px;
+        margin-top: 50px;
+    }
+
+    .row_my::after {
+        text-align: center;
+        content: "";
+        clear: both;
+        display: table;
+        padding-bottom: 0px;
+    }
+
+    .center {
+        display: block;
+        margin-bottom: 40px;
+        margin-top: 40px;
+    }
+
+}
