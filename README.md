@@ -5,7 +5,7 @@ This app is compatible with Unix and Unix-like operating systems.
 
 ## :question: AskMeAnything App
 
-This project aims to provide an Q&A Web Application, which will allow:
+This project aims to provide a Q&A Web Application, which will allow:
 
 * Registred Users to ask and answer questions and keep track of their contribution and general statistics
 
