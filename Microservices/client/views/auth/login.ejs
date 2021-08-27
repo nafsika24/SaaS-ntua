@@ -1,0 +1,43 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/auth_forms.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="/css/top-navbar.css">
+
+<script>
+    function validateForm() {
+        var x = document.forms["wrapper"]["email"].value;
+        if (x == "") {
+            alert("Fill out all fields");
+            return false;
+        }
+    }
+</script>
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+    <main>
+
+        <div class="wrapper ">
+            <%if(errorMessage) { %>
+                <div class="user-message user-message-error"><%= errorMessage %></div>
+            <% } %>
+            <form class="login" action="/login" method="POST" onsubmit="return validateForm()">
+                <p class="title">Log in</p>
+                <input type="text" name="email" id="email" placeholder="Email" autofocus required/>
+                <i class="fa fa-user"></i>
+                <input type="password" name="password" id="password" placeholder="Password" required/>
+                <i class="fa fa-key"></i>
+
+                <button>
+                    <i class="spinner"></i>
+
+                    <span class="state">Log in</span>
+                </button>
+            </form>
+
+            </p>
+        </div>
+    </main>
+<%- include('../includes/end.ejs') %>

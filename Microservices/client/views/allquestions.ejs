@@ -1,0 +1,85 @@
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/allquestions.css">
+    <link rel="stylesheet" href="/css/top-navbar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+<%- include('includes/navigation.ejs') %>
+<main>
+    <h1 class = "landing_title"> View all Questions!</h1>
+    <div style="background-image: url('https://img4.goodfon.com/wallpaper/nbig/a/8b/vector-blue-squares-abstract-background-geometric.jpg');"></div>
+
+    <div class="container">
+        <% if (islogged === true) { %>
+            <% if (quest.length > 0) { %>
+                <% for(let i=0; i<quest.length; i++) { %>
+
+                <button class="accordion"><b>Title: </b><%=quest[i].title  %>
+                    <br /><b>Question: </b> <%=quest[i].text %>
+                    <br /><b>Keywords: </b> <%=quest[i].keywords %></button>
+
+
+                        <div class="panel">
+                            <% for(let j=0; j<answers.length; j++) { %>
+                            <% if(JSON.stringify(quest[i]._id) === JSON.stringify(answers[j].questionid)) { %>
+                            <p> <b>Answers: </b><%= answers[j].text %>  </p>
+                            <% }%>
+                            <% }%>
+                        </div>
+
+
+
+                <% }%>
+
+            <% } else{ %>
+                <h2> No questions yet!</h2>
+            <% }%>
+
+
+            <% } else{ %>
+                <% if (quest.length > 0) { %>
+                    <% for(let questions of quest) { %>
+
+                    <button class="accordion"><b>Title: </b><%=questions.title  %>
+                        <br /><b>Question: </b> <%=questions.text %>
+                        <br /><b>Keywords: </b> <%=questions.keywords %></button>
+                    <div class="panel">
+                       <p> Login to see the answers :-)</p>
+                    </div>
+
+
+                    <% }%>
+
+                <% } else{ %>
+                    <h2> No questions yet!</h2>
+                <% }%>
+
+
+            <% }%>
+    </div>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+    <script>
+
+    </script>
+</main>
+
+<%- include('includes/end.ejs') %>

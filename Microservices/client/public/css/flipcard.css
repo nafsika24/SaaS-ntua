@@ -1,0 +1,134 @@
+
+.flip-card {
+
+    background-color: transparent;
+    width: 250px;
+    height: 250px;
+    perspective: 1000px;
+    text-align: center;
+
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+}
+
+.flip-card-front {
+    padding: 20px 5px;
+    background-color: white;
+    color: black;
+    width : 220px;
+    height: 220px;
+    border-radius: 12px;
+}
+
+.flip-card-back {
+    background-color: white;
+    color: white;
+    transform: rotateY(180deg);
+    border-radius: 12px;
+}
+
+.button_flip {
+    background-color: #66b3ff;
+    border: none;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 15px 18px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.images{
+    width:180px;
+    height:180px;
+}
+@media screen and (max-width: 650px) {
+    .images{
+        width:100px;
+        height:100px;
+    }
+    .flip-card {
+
+        background-color: transparent;
+        width: 150px;
+        height: 150px;
+        perspective: 1000px;
+
+    }
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 12px;
+    }
+
+    .flip-card-front {
+        padding: 20px 5px;
+        background-color: white;
+        color: black;
+        width : 150px;
+        height: 150px;
+        border-radius: 12px;
+    }
+
+    .flip-card-back {
+        background-color: white;
+        color: white;
+        transform: rotateY(180deg);
+        border-radius: 12px;
+    }
+
+    .button_flip {
+        background-color: #66b3ff;
+        border: none;
+        color: white;
+        padding: 18px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin: 15px 18px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+}

@@ -1,0 +1,59 @@
+<%- include('../includes/head.ejs') %>
+
+<link rel="stylesheet" href="/css/auth.css">
+<link rel="stylesheet" href="/css/top-navbar.css">
+<script>
+    function validateForm() {
+        var x = document.forms["login"]["email"].value;
+        if (x == "") {
+            alert("Fill out all fields");
+            return false;
+        }
+    }
+</script>
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <div class="wrapper">
+            <%if(errorMessage) { %>
+                <div class="user-message user-message-error"><%= errorMessage %></div>
+            <% } %>
+                <%if(errorMessage2) { %>
+                    <div class="user-message user-message-error"><%= errorMessage2 %></div>
+                <% } %>
+                <%if(errorMessage3) { %>
+                    <div class="user-message user-message-error"><%= errorMessage3 %></div>
+                <% } %>
+            <form class="login" action="/signup" method="POST" onsubmit="return validateForm()">
+                <p class="title">Sign Up</p>
+                <input type="text" name="username" id="username" placeholder="Username" autofocus required/>
+                <i class="fa fa-user"></i>
+              <input type="text" name="email" id="email" placeholder="Email" required />
+                <i class="fa fa-email"></i>
+
+                <input type="password" name="password" id="password" placeholder="Password (At least 6 characters)" required />
+                <i class="fa fa-key"></i>
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required />
+                <i class="fa fa-key-confirm"></i>
+
+                <button>
+                    <i class="spinner"></i>
+
+                    <span class="state">Sign Up</span>
+
+                </button>
+
+
+            </form>
+
+                <button class="button" type="cancel" onclick="window.location='/';return false;">Cancel</button>
+
+            </p>
+        </div>
+
+
+    </main>
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,58 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="../css/allquestions.css">
+<link rel="stylesheet" href="../css/top-navbar.css">
+<link rel="stylesheet" href="../css/technical/contact.css">
+</head>
+
+<body>
+<%- include('../includes/navigation.ejs') %>
+
+<main>
+
+    <div class="container">
+        <div class="row header">
+            <h3>Fill out the form below to learn more !</h3>
+        </div>
+        <div class="row body">
+            <form action="/technical" method="post">
+                <ul>
+
+                    <li>
+                        <p class="left">
+                            <label for="first_name">First name</label>
+                            <input type="text" id="first" name="first" placeholder="John" />
+                        </p>
+                        <p class="pull-right">
+                            <label for="last_name">Last name</label>
+                            <input type="text" id="last" name="last" placeholder="Smith" />
+                        </p>
+                    </li>
+
+                    <li>
+                        <p>
+                            <label for="email">Email <span class="req">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="john.smith@gmail.com" />
+                        </p>
+                    </li>
+                    <li><div class="divider"></div></li>
+                    <li>
+                        <label for="comments">Comments</label>
+                        <textarea cols="46" rows="3" id="comments" name="comments"></textarea>
+                    </li>
+
+                    <li>
+
+                        <button class="btn btn-submit" type="submit">Submit</button>
+
+                    </li>
+
+                </ul>
+            </form>
+
+
+        </div>
+    </div>
+
+</main>
+
+<%- include('../includes/end.ejs') %>
