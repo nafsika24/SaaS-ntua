@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://nafsika24:nafsika24@saas.z9fmo.mongodb.net/questions?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken"
+}
