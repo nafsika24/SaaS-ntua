@@ -32,7 +32,7 @@ and uses Node.js, Express.js for the Backend, ejs template engine for the Fronte
 
 Backend - Frontend communication is explainded within the two architectures.
 
-:iphone: The application supports responsive web app which which adjusts to smartphone proportions. 
+:iphone: The application supports responsive web app which adjusts to smartphone proportions. 
 
 ## :cloud: Deployment  
 Both architectures were deployed in Cloud with Heroku. The urls are:
